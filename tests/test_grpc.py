@@ -2,7 +2,6 @@
 
 import logging
 
-import grpc
 from google.protobuf import json_format
 
 from framework.config import settings
@@ -10,6 +9,7 @@ from framework.testbase import BaseTestCase
 from services.doubler.doubler_pb2_grpc import DoublerStub
 from services.doubler.doubler_pb2 import Number
 from utils.builders.number_builder import build_number_from_file, build_number_from_dict
+from utils.channel_factory import get_channel
 
 log = logging.getLogger(__name__)
 
@@ -20,7 +20,7 @@ class ExampleGrpcTestCase(BaseTestCase):
     @classmethod
     def setUpClass(cls):
         """test class setup"""
-        cls._channel = grpc.insecure_channel(settings["grpc_server"])
+        cls._channel = get_channel(settings["grpc_server"])
         cls._stub = DoublerStub(cls._channel)
 
     @classmethod

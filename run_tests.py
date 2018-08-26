@@ -53,11 +53,8 @@ def main():
     if args.xml:
         cmd += ' --junit-xml'
 
-    try:
-        print(subprocess.check_output(shlex.split(cmd)))
-    except subprocess.CalledProcessError:
-        # if any test fails a non-zero exit status is returned
-        pass
+    cp = subprocess.run(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    print(cp.stdout.decode('utf-8'))
 
 
 if __name__ == "__main__":

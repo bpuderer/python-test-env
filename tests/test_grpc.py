@@ -20,7 +20,7 @@ class ExampleGrpcTestCase(BaseTestCase):
     @classmethod
     def setUpClass(cls):
         """test class setup"""
-        cls._channel = get_channel(settings["grpc_server"])
+        cls._channel = get_channel(settings["doubler_grpc_host"], settings["doubler_grpc_port"])
         cls._stub = DoublerStub(cls._channel)
 
     @classmethod

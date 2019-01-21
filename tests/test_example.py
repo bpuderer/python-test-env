@@ -80,7 +80,7 @@ class ExampleTestCase(BaseTestCase):
     def test_write_stdout(self):
         """Demo test writing to stdout"""
         log.info("executing ExampleTestCase.test_write_stdout")
-        print("here's some text from tests.test_example:ExampleTestCase.test_writes_stdout")
+        print("here's some text from tests.test_example.ExampleTestCase.test_writes_stdout")
 
     def test_accessing_resource(self):
         """Demo accessing a file in resources directory"""

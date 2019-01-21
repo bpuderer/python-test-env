@@ -1,5 +1,5 @@
-grpcio-tools==1.16.0
-lxml==4.2.5
+grpcio-tools==1.18.0
+lxml==4.3.0
 nose2==0.8.0
-requests==2.20.1
+requests==2.21.0
 selenium==3.141.0

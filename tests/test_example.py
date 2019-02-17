@@ -1,5 +1,6 @@
 """Demo basics of using test environment"""
 
+from datetime import datetime
 import logging
 import unittest
 
@@ -46,10 +47,17 @@ class ExampleTestCase(BaseTestCase):
         log.info("executing ExampleTestCase.test_adding_ints")
         self.assertEqual(add_stuffs(42, 8), 50)
 
-    def test_str_ends_in_r(self):
+    def test_custom_assertion1(self):
         """Demo custom assertion from BaseTestCase"""
-        log.info("executing ExampleTestCase.test_str_ends_in_r")
+        log.info("executing ExampleTestCase.test_custom_assertion1")
         self.assertEndsInR('Doctor')
+
+    def test_custom_assertion2(self):
+        """Demo custom assertion from BaseTestCase"""
+        log.info("executing ExampleTestCase.test_custom_assertion2")
+        dt1 = datetime(2019, 2, 17, 12, 30, 28, 990000)
+        dt2 = datetime(2019, 2, 17, 12, 30, 30, 115000)
+        self.assertSecondsApart(dt2, dt1, 0.75)
 
     def test_fails(self):
         """Demo test failure"""

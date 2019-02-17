@@ -20,4 +20,5 @@ def get_channel(host, port=50051, authority=None):
     if authority is not None:
         options.append(('grpc.default_authority', authority))
     log.debug(f'Creating insecure gRPC channel: {host}:{port} options={options}')
+    # https://grpc.io/grpc/python/grpc.html#grpc.insecure_channel
     return grpc.insecure_channel(host+':'+str(port), options=options)

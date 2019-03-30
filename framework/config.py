@@ -23,5 +23,4 @@ except configparser.NoSectionError as e:
     print('Test run aborted')
     sys.exit()
 
-log.info('Loaded test settings for {}: {}'.format(test_env,
-         json.dumps(settings), indent=4, sort_keys=True))
+log.info(f'Loaded test settings for {test_env}: {json.dumps(settings, indent=4, sort_keys=True)}')

@@ -53,8 +53,12 @@ def main():
     if args.xml:
         cmd += ' --junit-xml'
 
-    cp = subprocess.run(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    print(cp.stdout.decode('utf-8'))
+    # to combine stdout and stderr
+    #cp = subprocess.run(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+
+    cp = subprocess.run(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print(cp.stdout.decode())
+    print(cp.stderr.decode())
 
 
 if __name__ == "__main__":

@@ -1,26 +1,23 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 from framework.testbase import BaseTestCase
+from pages.monty_pythons_flying_circus_page import MontyPythonsFlyingCircusPage
+from pages.john_cleese_page import JohnCleesePage
 
 
 class SeleniumExample(BaseTestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
+        self.driver.get('https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus')
 
     def tearDown(self):
-        self.driver.quit()
+        self.driver.close()
 
     def test_selenium_example(self):
         driver = self.driver
-        driver.get("https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus")
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.LINK_TEXT, "John Cleese"))).click()
-        WebDriverWait(driver, 5).until(EC.title_is("John Cleese - Wikipedia"))
+        monty_python = MontyPythonsFlyingCircusPage(driver)
+        monty_python.click_john_cleese_link()
 
-        driver.get_screenshot_as_file('screenshots/jmc.png')
-
-        ps = driver.page_source
-        self.assertIn("John Marwood Cleese", ps)
+        john_cleese = JohnCleesePage(driver)
+        john_cleese.take_screenshot()

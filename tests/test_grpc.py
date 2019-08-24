@@ -13,6 +13,7 @@ from services.doubler.doubler_pb2 import Number
 
 
 log = logging.getLogger(__name__)
+METADATA = (('key1', 'val1'), ('key2', 'val2'),)
 TIMEOUT_SEC = 0.15
 
 class ExampleGrpcTestCase(BaseTestCase):
@@ -21,7 +22,9 @@ class ExampleGrpcTestCase(BaseTestCase):
     @classmethod
     def setUpClass(cls):
         """test class setup"""
-        cls._channel = get_channel(settings["doubler_grpc_host"], settings["doubler_grpc_port"])
+        cls._channel = get_channel(settings["doubler_grpc_host"],
+                                   settings["doubler_grpc_port"],
+                                   metadata=METADATA)
         cls._stub = DoublerStub(cls._channel)
 
     @classmethod

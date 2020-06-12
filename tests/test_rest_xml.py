@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 import requests
 
 from framework.config import settings
-from framework.testbase import BaseTestCase
+from tests.base_test import BaseTestCase
 from utils.schemavalidation.validate import validate_a
 
 

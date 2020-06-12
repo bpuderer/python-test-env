@@ -3,7 +3,7 @@
 import logging
 
 import framework.config
-from framework.testbase import BaseTestCase
+from tests.base_test import BaseTestCase
 
 log = logging.getLogger(__name__)
 

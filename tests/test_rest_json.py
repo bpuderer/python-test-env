@@ -4,7 +4,7 @@ import json
 import requests
 
 from framework.config import settings
-from framework.testbase import BaseTestCase
+from tests.base_test import BaseTestCase
 
 
 class RestJsonExample(BaseTestCase):

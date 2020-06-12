@@ -5,7 +5,7 @@ import logging
 from google.protobuf import json_format
 
 from framework.config import settings
-from framework.testbase import BaseTestCase
+from tests.base_test import BaseTestCase
 from utils.channel_factory import get_channel
 from utils.builders.grpc_builders import build_number_from_file, build_number_from_dict
 from services.doubler.doubler_pb2_grpc import DoublerStub

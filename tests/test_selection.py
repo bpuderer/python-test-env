@@ -15,7 +15,7 @@ NOTE: run_tests.py uses a single -A argument, not multiple as with nose2
 https://nose2.readthedocs.io/en/latest/plugins/attrib.html?highlight=attribute
 """
 
-from framework.testbase import BaseTestCase
+from tests.base_test import BaseTestCase
 
 
 class TestCaseSelection(BaseTestCase):

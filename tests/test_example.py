@@ -5,7 +5,7 @@ import logging
 import unittest
 
 from framework.config import settings
-from framework.testbase import BaseTestCase
+from tests.base_test import BaseTestCase
 from utils.useless_util import add_stuffs
 
 log = logging.getLogger(__name__)

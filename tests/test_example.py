@@ -55,8 +55,8 @@ class ExampleTestCase(BaseTestCase):
     def test_custom_assertion2(self):
         """Demo custom assertion from BaseTestCase"""
         log.info("executing ExampleTestCase.test_custom_assertion2")
-        dt1 = datetime(2019, 2, 17, 12, 30, 28, 990000)
-        dt2 = datetime(2019, 2, 17, 12, 30, 30, 115000)
+        dt1 = datetime(2024, 2, 17, 12, 30, 28, 990000)
+        dt2 = datetime(2024, 2, 17, 12, 30, 30, 115000)
         self.assertSecondsApart(dt2, dt1, 0.75)
 
     def test_fails(self):

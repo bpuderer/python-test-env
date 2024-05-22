@@ -30,7 +30,7 @@ class RestXmlExample(BaseTestCase):
 
 
     def test_xml(self):
-        """xml test using echoxml uri on httpsim.py in python-test"""
+        """xml test using flask_http_sim.py in python-test"""
         expected = {"b val 1", "b val 2"}
         root = self.send_xml_validate("resources/requests/echoxml/request1.xml")
         b_elements = root.iterfind('b')

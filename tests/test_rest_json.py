@@ -29,6 +29,6 @@ class RestJsonExample(BaseTestCase):
 
 
     def test_book_creation(self):
-        """verify book creation using httpsim.py in python-test"""
+        """verify book creation using flask_http_sim.py in python-test"""
         r = self.create_book("resources/requests/books/request1.json")
         self.assertEqual(r.status_code, HTTPStatus.CREATED)
